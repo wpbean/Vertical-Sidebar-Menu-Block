@@ -16,6 +16,12 @@ Vertical Sidebar Menu Block is a powerful Gutenberg block plugin that allows you
 
 Collapsible sidebar menus are an excellent way to improve your site's user experience by allowing visitors to navigate long menus in a compact, organized manner. By hiding or revealing submenu items as needed, a collapsible design saves valuable screen space, keeps navigation clean, and ensures your content remains the primary focus. This is especially useful for websites with complex or multi-level navigation structures.
 
+== Quick Links ==
+
+👉 Upgrade to Pro: [Explore all Features of Vertical Sidebar Menu Block](https://wpbean.com/downloads/vertical-sidebar-menu-block-pro/)
+👉 Live Demo: [Try Vertical Sidebar Menu Block Demo](https://blocks.wpbean.com/vertical-sidebar-menu-block/)
+👉 Support: [Support](https://wpbean.com/support/)
+
 ### Key Features:
 
 * **Choose Any Navigation Menu**: Select and display any WordPress navigation menu.

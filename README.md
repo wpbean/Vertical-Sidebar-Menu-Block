@@ -103,3 +103,8 @@ The Vertical Sidebar Menu Block is optimized for performance. It uses minimal re
 #### What should I do if no navigation menu is available to select?
 If no menu is available, navigate to Appearance > Menus in your WordPress admin panel to create a new menu. Add your desired links or pages to the menu, then return to the block settings and select it.
 
+## Demo
+
+Visit this URL to see this plugin live demo.
+
+https://blocks.wpbean.com/vertical-sidebar-menu-block/
