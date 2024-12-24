@@ -1,1 +1,202 @@
-.wpbean-vertical-menu-block>ul,.wpbean-vertical-menu-block>ul ul{display:flex;flex-direction:column;flex-wrap:wrap;gap:0;list-style:none;margin:0;padding:0}.wpbean-vertical-menu-block>ul ul{display:none;margin-inline-start:1rem;padding-inline-start:.5rem;position:relative;white-space:nowrap}.wpbean-vertical-menu-block>ul ul:before{background-color:#1f2937;bottom:.75rem;content:"";inset-inline-start:0;opacity:.1;position:absolute;top:.75rem;width:1px}.wpbean-vertical-menu-block>ul ul.wpb-submenu-opened{display:flex}.wpbean-vertical-menu-block>ul ul li>a{font-size:14px;line-height:20px}.wpbean-vertical-menu-block>ul>li>a{font-size:14px}.wpbean-vertical-menu-block>ul li a{align-content:flex-start;align-items:center;border-radius:.5rem;color:#1f2937!important;display:grid;gap:.5rem;grid-auto-columns:minmax(auto,max-content) auto max-content;grid-auto-flow:column;line-height:24px;outline:0;padding:.5rem 1rem;text-decoration:none;text-wrap:balance;-o-transition:all .3s linear;-moz-transition:all .3s linear;-webkit-transition:all .3s linear;-ms-transition:all .3s linear;-webkit-user-select:none;-moz-user-select:none;user-select:none}.wpbean-vertical-menu-block>ul li a:hover{background-color:rgba(31,41,55,.1)!important;color:#1f2937!important}.wpbean-vertical-menu-block>ul li.menu-item-has-children>a .menu-expand-icon{align-items:center;display:inline-flex;font-size:17px;height:unset;justify-self:end;width:unset}.wpbean-vertical-menu-block>ul li.menu-item-has-children>a .menu-expand-icon:before{transform:rotate(0deg);-o-transition:transform .3s linear;-moz-transition:transform .3s linear;-webkit-transition:transform .3s linear;-ms-transition:transform .3s linear}.wpbean-vertical-menu-block>ul li.menu-item-has-children.wpb-submenu-opened>a{color:#1f2937!important}.wpbean-vertical-menu-block>ul li.menu-item-has-children.wpb-submenu-opened>a .menu-expand-icon:before{transform:rotate(45deg)}.wpbean-vertical-menu-block>ul li.menu-item-has-children.wpb-submenu-opened>a .menu-expand-icon.dashicons-arrow-right-alt2:before,.wpbean-vertical-menu-block>ul li.menu-item-has-children.wpb-submenu-opened>a .menu-expand-icon.dashicons-arrow-right-alt:before,.wpbean-vertical-menu-block>ul li.menu-item-has-children.wpb-submenu-opened>a .menu-expand-icon.dashicons-arrow-right:before{transform:rotate(90deg)}.wpbean-vertical-menu-block>ul li.current-menu-item>a,.wpbean-vertical-menu-block>ul li.wpb-submenu-opened.current-menu-item>a{background-color:#2c3440!important;color:#d7dde4!important}.wpbean-vertical-menu-block>ul li.menu-item i._mi,.wpbean-vertical-menu-block>ul li.menu-item i.wpmi__icon{display:inherit;line-height:inherit;margin:0}.wpbean-vsm-icon-grid{display:grid;gap:6px;grid-template-columns:repeat(6,1fr);margin-top:10px}.wpbean-vsm-icon-button{align-items:center;background:#f9f9f9;border:1px solid #ccc;border-radius:4px;cursor:pointer;display:flex;height:36px;justify-content:center;width:36px}.wpbean-vsm-icon-button.components-button.is-secondary{box-shadow:none}.wpbean-vsm-icon-button.selected{background:#e7f3ff;border-color:#007cba}.wpbean-vsm-icon-button .dashicons{color:#1e1e1e;font-size:20px}.wpbean-vsm-icon-button .dashicons:hover{color:#007cba}.wpbean-settings-tab-panel .components-tab-panel__tabs{margin:0 -16px}.wpbean-settings-tab-panel .components-tab-panel__tabs button{align-items:center;background-color:#fff;background:#edf2f7;border:0;border-top:1px solid #cbd5e0;color:#4a5568;display:flex;flex:1;flex-direction:column;height:48px;justify-content:center;line-height:1.8}.wpbean-settings-tab-panel .components-tab-panel__tabs button.is-active{background:#fff;box-shadow:inset 0 -3px 0 0 var(--wp-admin-theme-color,#00669b);color:#2d3748}.wpbean-settings-tab-panel .components-tab-panel__tab-content{margin-top:16px}.wpbean-settings-tab-panel .components-tab-panel__tab-content .components-tools-panel{border:0;margin:0;padding:0}.wpbean-vsm-no-padding .components-grid.components-tools-panel{border-top:0;padding:0}.wpbean-pro-only-panel .components-panel__body-title .components-button:after{background:#8080f1;border-radius:4px;color:#fff;content:" Pro";font-size:11px;margin-left:auto;padding:3px 5px}
+/*!****************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/editor.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wpbean-vertical-menu-block > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0;
+}
+.wpbean-vertical-menu-block > ul ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  gap: 0;
+  display: none;
+  position: relative;
+  white-space: nowrap;
+  margin-inline-start: 1rem;
+  padding-inline-start: 0.5rem;
+}
+.wpbean-vertical-menu-block > ul ul::before {
+  position: absolute;
+  bottom: 0.75rem;
+  inset-inline-start: 0px;
+  top: 0.75rem;
+  width: 1px;
+  background-color: #1f2937;
+  opacity: 0.1;
+  content: "";
+}
+.wpbean-vertical-menu-block > ul ul.wpb-submenu-opened {
+  display: flex;
+}
+.wpbean-vertical-menu-block > ul ul li > a {
+  font-size: 14px;
+  line-height: 20px;
+}
+.wpbean-vertical-menu-block > ul > li > a {
+  font-size: 14px;
+}
+.wpbean-vertical-menu-block > ul li a {
+  display: grid;
+  grid-auto-flow: column;
+  align-content: flex-start;
+  align-items: center;
+  gap: 0.5rem;
+  grid-auto-columns: minmax(auto, max-content) auto max-content;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+       user-select: none;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  -o-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  outline: 0;
+  line-height: 24px;
+  border-radius: 0.5rem;
+  text-wrap: balance;
+  color: #1f2937 !important;
+}
+.wpbean-vertical-menu-block > ul li a:hover {
+  color: #1f2937 !important;
+  background-color: rgba(31, 41, 55, 0.1) !important;
+}
+.wpbean-vertical-menu-block > ul li.menu-item-has-children > a .menu-expand-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-self: end;
+  font-size: 17px;
+  width: unset;
+  height: unset;
+}
+.wpbean-vertical-menu-block > ul li.menu-item-has-children > a .menu-expand-icon::before {
+  transform: rotate(0deg);
+  -o-transition: transform 0.3s linear;
+  -moz-transition: transform 0.3s linear;
+  -webkit-transition: transform 0.3s linear;
+  -ms-transition: transform 0.3s linear;
+}
+.wpbean-vertical-menu-block > ul li.menu-item-has-children.wpb-submenu-opened > a {
+  color: #1f2937 !important;
+}
+.wpbean-vertical-menu-block > ul li.menu-item-has-children.wpb-submenu-opened > a .menu-expand-icon::before {
+  transform: rotate(45deg);
+}
+.wpbean-vertical-menu-block > ul li.menu-item-has-children.wpb-submenu-opened > a .menu-expand-icon.dashicons-arrow-right-alt2::before, .wpbean-vertical-menu-block > ul li.menu-item-has-children.wpb-submenu-opened > a .menu-expand-icon.dashicons-arrow-right::before, .wpbean-vertical-menu-block > ul li.menu-item-has-children.wpb-submenu-opened > a .menu-expand-icon.dashicons-arrow-right-alt::before {
+  transform: rotate(90deg);
+}
+.wpbean-vertical-menu-block > ul li.current-menu-item > a, .wpbean-vertical-menu-block > ul li.wpb-submenu-opened.current-menu-item > a {
+  color: #D7DDE4 !important;
+  background-color: #2C3440 !important;
+}
+.wpbean-vertical-menu-block > ul li.menu-item i._mi,
+.wpbean-vertical-menu-block > ul li.menu-item i.wpmi__icon {
+  margin: 0;
+  line-height: inherit;
+  display: inherit;
+}
+
+/* Editor Icon picker style */
+.wpbean-vsm-icon-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.wpbean-vsm-icon-button {
+  display: flex;
+  width: 36px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background: #f9f9f9;
+  cursor: pointer;
+}
+.wpbean-vsm-icon-button.components-button.is-secondary {
+  box-shadow: none;
+}
+.wpbean-vsm-icon-button.selected {
+  border-color: #007cba;
+  background: #e7f3ff;
+}
+.wpbean-vsm-icon-button .dashicons {
+  font-size: 20px;
+  color: #1e1e1e;
+}
+.wpbean-vsm-icon-button .dashicons:hover {
+  color: #007cba;
+}
+
+/* Editor Tab style */
+.wpbean-settings-tab-panel .components-tab-panel__tabs {
+  margin: 0 -16px;
+}
+.wpbean-settings-tab-panel .components-tab-panel__tabs button {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  height: 48px;
+  color: #4a5568;
+  line-height: 1.8;
+  border: 0;
+  background: #edf2f7;
+  border-top: 1px solid #cbd5e0;
+}
+.wpbean-settings-tab-panel .components-tab-panel__tabs button.is-active {
+  box-shadow: inset 0 -3px 0px 0px var(--wp-admin-theme-color, #00669b);
+  color: #2d3748;
+  background: #fff;
+}
+.wpbean-settings-tab-panel .components-tab-panel__tab-content {
+  margin-top: 16px;
+}
+.wpbean-settings-tab-panel .components-tab-panel__tab-content .components-tools-panel {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+/* Editor typography style */
+.wpbean-vsm-no-padding .components-grid.components-tools-panel {
+  padding: 0;
+  border-top: 0;
+}
+
+/* Editor Pro only PanelBody */
+.wpbean-pro-only-panel .components-panel__body-title .components-button::after {
+  content: " Pro";
+  color: #fff;
+  margin-left: auto;
+  background: #8080F1;
+  padding: 3px 5px;
+  border-radius: 4px;
+  font-size: 11px;
+}
+
+/*# sourceMappingURL=index.css.map*/

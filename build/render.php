@@ -12,6 +12,7 @@ if ( ! isset( $attributes['menuId'] ) ) {
     return;
 }
 
+
 // Generate a unique block ID based on the client ID or a random ID.
 $block_id = isset( $attributes['theClientId'] ) 
     ? 'wpbean-vertical-menu-block-' . $attributes['theClientId'] 

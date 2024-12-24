@@ -5,7 +5,7 @@
  * Description:       Collapsible sidebar vertical sidebar menu block for the Gutenberg editor.
  * Requires at least: 6.6
  * Requires PHP:      7.4
- * Version:           1.0
+ * Version:           1.01
  * Author:            WPBean
  * Author URI:        https://wpbean.com/
  * License:           GPL-2.0-or-later

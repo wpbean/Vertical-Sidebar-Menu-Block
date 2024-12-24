@@ -3,7 +3,7 @@ Contributors:      wpbean, imranwpb
 Tags:              block, sidebar menu, vertical menu, accordion menu, collapse menu
 Requires at least: 6.6
 Tested up to:      6.7.1
-Stable tag:        1.0
+Stable tag:        1.01
 Requires PHP:      7.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -124,5 +124,8 @@ This plugin includes a modified version of the <a href="https://github.com/tefra
 
 = 1.0 =
 * Release
+
+= 1.01 =
+* Fixed the first review changes.
 
 == Upgrade notice ==
