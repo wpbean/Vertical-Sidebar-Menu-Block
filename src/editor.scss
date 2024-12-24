@@ -1,0 +1,254 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+@mixin all-ul-default-style {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	gap: 0;
+}
+
+@mixin transition( $property: transform, $duration: .3s, $effect: linear ) {
+	-o-transition: $property $duration $effect;
+	-moz-transition: $property $duration $effect;
+	-webkit-transition: $property $duration $effect;
+	-ms-transition: $property $duration $effect;
+}
+
+@mixin wpbean-vertical-menu-color {
+	color: #1f2937!important;
+}
+
+@mixin wpbean-vertical-menu-current-bg-color {
+	color: #D7DDE4!important;
+	background-color: #2C3440!important;
+}
+
+@mixin wpbean-vertical-menu-hover-bg {
+	background-color: rgb(31 41 55 / 10%)!important;
+}
+
+.wpbean-vertical-menu-block {
+	> ul {
+		@include all-ul-default-style;
+
+		ul {
+			@include all-ul-default-style;
+			display: none;
+			position: relative;
+			white-space: nowrap;
+			margin-inline-start: 1rem;
+			padding-inline-start: .5rem;
+
+			&::before {
+				position: absolute;
+				bottom: .75rem;
+				inset-inline-start: 0px;
+				top: .75rem;
+				width: 1px;
+				background-color: #1f2937;
+				opacity: .1;
+				content: "";
+			}
+			
+			&.wpb-submenu-opened {
+				display: flex;
+			}
+			li > a {
+				font-size: 14px;
+				line-height: 20px;
+			} 
+		}
+		> li{
+			> a {
+				font-size: 14px;
+			}
+		}
+		li {
+			a {
+				display: grid;
+				grid-auto-flow: column;
+				align-content: flex-start;
+				align-items: center;
+				gap: .5rem;
+				grid-auto-columns: minmax(auto, max-content) auto max-content;
+				-webkit-user-select: none;
+				user-select: none;
+				padding: .5rem 1rem;
+				text-decoration: none;
+				@include transition( all );
+				outline: 0;
+				line-height: 24px;
+				border-radius: 0.5rem;
+				text-wrap: balance;
+				@include wpbean-vertical-menu-color;
+
+				&:hover {
+					@include wpbean-vertical-menu-color;
+					@include wpbean-vertical-menu-hover-bg;
+				}
+			}
+
+			&.menu-item-has-children {
+				> a {
+					
+					.menu-expand-icon {
+						display: inline-flex;
+						align-items: center;
+						justify-self: end;
+						font-size: 17px;
+						width: unset;
+    					height: unset;
+						
+						&::before {
+							transform: rotate(0deg);
+							@include transition;
+						}
+					}
+				}
+	
+				&.wpb-submenu-opened > a {
+					@include wpbean-vertical-menu-color;
+
+					.menu-expand-icon {
+						&::before {
+							transform: rotate(45deg);
+						}
+
+						&.dashicons-arrow-right-alt2::before, &.dashicons-arrow-right::before, &.dashicons-arrow-right-alt::before {
+							transform: rotate(90deg);
+						}
+					}
+				}
+			}
+
+			&.current-menu-item, &.wpb-submenu-opened.current-menu-item {
+				> a {
+					@include wpbean-vertical-menu-current-bg-color;
+				}
+			}
+
+			&.menu-item {
+				i._mi,
+				i.wpmi__icon {
+					margin: 0;
+					line-height: inherit;
+					display: inherit;
+				}
+			}
+		}
+	}
+}
+
+/* Editor Icon picker style */
+
+.wpbean-vsm-icon-grid {
+	display: grid;
+    grid-template-columns: repeat(6, 1fr);
+	gap: 6px;
+	margin-top: 10px;
+}
+
+.wpbean-vsm-icon-button {
+	display: flex;
+	width: 36px;
+	height: 36px;
+	align-items: center;
+	justify-content: center;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	background: #f9f9f9;
+	cursor: pointer;
+
+	&.components-button.is-secondary {
+		box-shadow: none;
+	}
+
+	&.selected {
+		border-color: #007cba;
+		background: #e7f3ff;
+	}
+
+	.dashicons {
+		font-size: 20px;
+		color: #1e1e1e;
+
+		&:hover {
+			color: #007cba;
+		}
+	}
+}
+
+/* Editor Tab style */
+.wpbean-settings-tab-panel {
+	.components-tab-panel__tabs {
+		margin: 0 -16px;
+		
+		button {
+			display: flex;
+			flex: 1;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			background-color: #fff;
+			height: 48px;
+			color: #4a5568;
+			line-height: 1.8;
+			border: 0;
+			background: #edf2f7;
+			border-top: 1px solid #cbd5e0;
+			
+			&.is-active {
+				box-shadow: inset 0 -3px 0px 0px var(--wp-admin-theme-color, #00669b);
+				color: #2d3748;
+				background: #fff;
+			}          
+		}
+	}
+	.components-tab-panel__tab-content {
+		margin-top: 16px;
+
+		.components-tools-panel {
+			padding: 0;
+			margin: 0;
+			border: 0;
+		}
+	}
+}
+
+/* Editor typography style */
+
+.wpbean-vsm-no-padding {
+	.components-grid.components-tools-panel {
+		padding: 0;
+		border-top: 0;
+	}
+}
+
+/* Editor Pro only PanelBody */
+.wpbean-pro-only-panel {
+	.components-panel__body-title {
+		.components-button::after {
+			content: " Pro";
+			color: #fff;
+			margin-left: auto;
+			background: #8080F1;
+			padding: 3px 5px;
+			border-radius: 4px;
+			font-size: 11px;
+		} 
+	}
+}

@@ -1,0 +1,20 @@
+{
+    "name": "wpbean/vertical-sidebar-menu-block",
+    "version": "1.0.0",
+    "description": "Collapsible sidebar vertical sidebar menu block.",
+    "type": "wordpress-plugin",
+    "license": "GPLv2",
+    "authors": [
+        {
+            "name": "wpbean"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "WPBean\\VerticalSidebarMenuBlock\\": "includes/"
+        }
+    },
+    "require-dev": {
+    }
+}
