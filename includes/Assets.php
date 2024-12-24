@@ -27,7 +27,7 @@ class Assets {
 	public function register_scripts() {
 		wp_register_script(
 			'wpb-vertical-sidebar-menu-block-wpbeannavgoco',
-			plugins_url( '../src/assets/js/jquery.wpbeannavgoco.min.js', __FILE__ ),
+			plugins_url( '../assets/js/jquery.wpbeannavgoco.min.js', __FILE__ ),
 			array( 'jquery' ),
 			'1.2',
 			true

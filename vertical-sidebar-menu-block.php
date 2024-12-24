@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       Vertical Sidebar Menu Block
- * Plugin URI:        https://wpbean.com/
+ * Plugin URI:        https://wpbean.com/downloads/vertical-sidebar-menu-block-pro/
  * Description:       Collapsible sidebar vertical sidebar menu block for the Gutenberg editor.
  * Requires at least: 6.6
  * Requires PHP:      7.4

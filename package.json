@@ -15,6 +15,7 @@
 		"start": "wp-scripts start"
 	},
 	"files": [
+		"assets",
 		"build",
 		"includes",
 		"languages",
