@@ -36,6 +36,10 @@ Collapsible sidebar menus are an excellent way to improve your site's user exper
 * **Child Items Separator**: Option to customize child items separator border visibility, width and color.
 * **Dedicated Support**: Get expert help whenever you need it, ensuring a smooth experience.
 
+<strong>WANT TO CONTRIBUTE TO THE PLUGIN? 🙋</strong>
+
+You may now contribute to the plugin on Github: <a href="https://github.com/wpbean/Vertical-Sidebar-Menu-Block" target="_blank" rel="">Vertical Sidebar Menu Block on Github</a>
+
 == Installation ==
 
 Follow these simple steps to install and use the Vertical Sidebar Menu Block on your WordPress site:
@@ -111,6 +115,10 @@ The Vertical Sidebar Menu Block is optimized for performance. It uses minimal re
 If no menu is available, navigate to Appearance > Menus in your WordPress admin panel to create a new menu. Add your desired links or pages to the menu, then return to the block settings and select it.
 
 == Screenshots ==
+
+== Credits ==
+
+This plugin includes a modified version of the <a href="https://github.com/tefra/navgoco">Navgoco jQuery plugin</a> by Tefra, which is licensed under the BSD-3-Clause License. Original library copyright © Tefra. The modified version complies with the BSD-3-Clause License. You can view the original license and copyright information in the library’s source code within this plugin.
 
 == Changelog ==
 
