@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-use WPBean\VerticalSidebarMenuBlock\Utils\DynamicStyleHandler;
+use VSMB\VerticalSidebarMenuBlock\Utils\DynamicStyleHandler;
 
 // Return early if the menu ID is not set.
 if ( ! isset( $attributes['menuId'] ) ) {

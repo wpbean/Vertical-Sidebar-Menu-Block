@@ -7,14 +7,14 @@ namespace Composer\Autoload;
 class ComposerStaticInit31ac0830495e080a40b94e52a1368737
 {
     public static $prefixLengthsPsr4 = array (
-        'W' => 
+        'V' => 
         array (
-            'WPBean\\VerticalSidebarMenuBlock\\' => 32,
+            'VSMB\\VerticalSidebarMenuBlock\\' => 30,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'WPBean\\VerticalSidebarMenuBlock\\' => 
+        'VSMB\\VerticalSidebarMenuBlock\\' => 
         array (
             0 => __DIR__ . '/../..' . '/includes',
         ),

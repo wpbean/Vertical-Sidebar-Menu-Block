@@ -20,6 +20,7 @@
 		"includes",
 		"languages",
 		"vendor",
+		"src",
 		"vertical-sidebar-menu-block.php",
 		"readme.txt",
 		"composer.json"

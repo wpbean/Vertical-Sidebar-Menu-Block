@@ -6,5 +6,5 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'WPBean\\VerticalSidebarMenuBlock\\' => array($baseDir . '/includes'),
+    'VSMB\\VerticalSidebarMenuBlock\\' => array($baseDir . '/includes'),
 );

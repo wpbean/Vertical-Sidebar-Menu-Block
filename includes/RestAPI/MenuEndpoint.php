@@ -1,6 +1,6 @@
 <?php
 
-namespace WPBean\VerticalSidebarMenuBlock\RestAPI;
+namespace VSMB\VerticalSidebarMenuBlock\RestAPI;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
@@ -23,7 +23,7 @@ class MenuEndpoint {
 	 * Registers the REST API route.
 	 */
 	public function register_routes() {
-		$route = apply_filters( 'vsms_rest_api_route', 'vsmb_get_menu_items/v1' );
+		$route = apply_filters( 'vsmb_rest_api_route', 'vsmb_get_menu_items/v1' );
 
 		register_rest_route(
 			$route,

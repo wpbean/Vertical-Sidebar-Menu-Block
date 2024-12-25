@@ -12,7 +12,7 @@
     "minimum-stability": "dev",
     "autoload": {
         "psr-4": {
-            "WPBean\\VerticalSidebarMenuBlock\\": "includes/"
+            "VSMB\\VerticalSidebarMenuBlock\\": "includes/"
         }
     },
     "require-dev": {

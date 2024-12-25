@@ -1,6 +1,6 @@
 <?php
 
-namespace WPBean\VerticalSidebarMenuBlock;
+namespace VSMB\VerticalSidebarMenuBlock;
 
 // Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
