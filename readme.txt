@@ -3,7 +3,7 @@ Contributors:      wpbean, imranwpb
 Tags:              block, sidebar menu, vertical menu, accordion menu, collapse menu
 Requires at least: 6.6
 Tested up to:      6.7.1
-Stable tag:        1.02
+Stable tag:        1.03
 Requires PHP:      7.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -37,13 +37,16 @@ Collapsible sidebar menus are an excellent way to improve your site's user exper
 
 == Source Code and Development ==
 
-This plugin uses modern build tools like Webpack and npm to generate production-ready files. The uncompressed source code is included in the plugin's `src/` directory for transparency and review. Developers can access the source code directly or contribute via the GitHub repository.
+This plugin uses <b>wp-scripts</b> which comes with modern build tools like Webpack and npm to generate production-ready files. The uncompressed source code is included in the plugin's `src/` directory for transparency and review. Developers can access the source code directly or contribute via the GitHub repository.
 
 To build the plugin from source:
 
 1. Install Node.js and npm.
 2. Run `npm install` to install dependencies.
 3. Use `npm run build` to compile the assets.
+
+For more details, see the documentation in the WordPress developer resources:  
+[WordPress Developer Resources - Get started with wp-scripts](https://developer.wordpress.org/block-editor/getting-started/devenv/get-started-with-wp-scripts/)
 
 For details, see the documentation in the GitHub repository:  
 [GitHub - Vertical Sidebar Menu Block](https://github.com/wpbean/Vertical-Sidebar-Menu-Block)
@@ -106,5 +109,8 @@ This plugin includes a modified version of the <a href="https://github.com/tefra
 
 = 1.02 =
 * Addressed WordPress.org plugin 2nd review feedback.
+
+= 1.03 =
+* Addressed WordPress.org plugin 3nd review feedback.
 
 == Upgrade Notice ==

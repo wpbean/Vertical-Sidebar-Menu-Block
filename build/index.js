@@ -331,38 +331,53 @@ const MenuSettings = ({
 
 /***/ }),
 
-/***/ "./src/components/ProOnlyText.js":
-/*!***************************************!*\
-  !*** ./src/components/ProOnlyText.js ***!
-  \***************************************/
+/***/ "./src/components/ProUpgradeNotice.js":
+/*!********************************************!*\
+  !*** ./src/components/ProUpgradeNotice.js ***!
+  \********************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   ProOnlyText: () => (/* binding */ ProOnlyText)
+/* harmony export */   ProUpgradeNotice: () => (/* binding */ ProUpgradeNotice)
 /* harmony export */ });
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/i18n */ "@wordpress/i18n");
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../editor.scss */ "./src/editor.scss");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__);
 
 
 
-const ProOnlyText = ({
-  props
-}) => {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.Fragment, {
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("p", {
-      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Only the premium version of this plugin has these specific parameters. Please upgrade to the pro version to receive a special 10% discount.", "vertical-sidebar-menu-block")
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsxs)("p", {
-      children: [(0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Discount Code:", "vertical-sidebar-menu-block"), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("b", {
-        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("a", {
-          href: "https://wpbean.com/",
-          target: "_blank",
-          children: "10PERCENTOFF"
-        })
-      })]
+
+const ProUpgradeNotice = () => {
+  const [isDismissed, setDismissed] = (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_1__.useState)(false);
+  if (isDismissed) {
+    return null; // Do not render if dismissed
+  }
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.Notice, {
+    status: "info",
+    isDismissible: true,
+    onDismiss: () => setDismissed(true),
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalHeading, {
+      level: 4,
+      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Upgrade to Pro!", "vertical-sidebar-menu-block")
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalText, {
+      children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Unlock premium features such as custom colors, background, advanced spacing, and dedicated support.", "vertical-sidebar-menu-block")
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalText, {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
+        href: "https://wpbean.com/downloads/vertical-sidebar-menu-block-pro/",
+        target: "_blank",
+        rel: "noopener noreferrer",
+        style: {
+          color: '#0073aa',
+          textDecoration: 'none'
+        },
+        children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Learn More", "vertical-sidebar-menu-block")
+      })
     })]
   });
 };
@@ -386,57 +401,81 @@ const RenderMenuItems = ({
   items,
   maxDepth = Infinity,
   currentDepth = 0,
-  attributes // Pass attributes to check accordionMode
+  attributes
 }) => {
+  const {
+    fontSize = "16px",
+    fontWeight = "400",
+    lineHeight = "1.5",
+    childFontSize = "14px",
+    childFontWeight = "400",
+    childLineHeight = "1.5",
+    collapseFontSize = "12px",
+    collapseFontWeight = "400",
+    collapseLineHeight = "1.5",
+    expandIcon = "arrow-down",
+    accordionMode = false
+  } = attributes || {};
   const toggleMenu = event => {
     event.preventDefault();
     const clickedLi = event.currentTarget.closest("li");
     const parentUl = clickedLi.parentElement;
 
-    // If accordionMode is true, close other open menu items at the same level
-    if (attributes.accordionMode && parentUl) {
+    // Handle accordion mode
+    if (accordionMode && parentUl) {
       const siblingLis = parentUl.querySelectorAll("li.wpb-submenu-opened");
       siblingLis.forEach(li => {
         if (li !== clickedLi) {
           li.classList.remove("wpb-submenu-opened");
-          const nestedUl = li.querySelector("ul.wpb-submenu-opened");
+          const nestedUl = li.querySelector("ul");
           if (nestedUl) {
             nestedUl.classList.remove("wpb-submenu-opened");
+            nestedUl.setAttribute("aria-hidden", "true");
+            const anchor = li.querySelector("a[aria-expanded]");
+            if (anchor) anchor.setAttribute("aria-expanded", "false");
           }
         }
       });
     }
 
     // Toggle the current menu item
-    clickedLi.classList.toggle("wpb-submenu-opened");
     const nestedUl = clickedLi.querySelector("ul");
     if (nestedUl) {
+      const isExpanded = clickedLi.classList.toggle("wpb-submenu-opened");
+      nestedUl.setAttribute("aria-hidden", !isExpanded);
       nestedUl.classList.toggle("wpb-submenu-opened");
+      const anchor = clickedLi.querySelector("a[aria-expanded]");
+      if (anchor) anchor.setAttribute("aria-expanded", isExpanded);
     }
   };
-  const renderMenuItems = (items, depth) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("ul", {
+  const renderMenuItems = (items, depth) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.Fragment, {
     children: items.map(item => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("li", {
       className: item.children && item.children.length > 0 ? 'menu-item-has-children' : '',
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsxs)("a", {
-        href: item.url,
+        href: item.url || "#",
         onClick: item.children && depth < maxDepth ? toggleMenu : undefined,
         style: {
-          fontSize: depth === 0 ? attributes.fontSize : attributes.childFontSize,
-          fontWeight: depth === 0 ? attributes.fontWeight : attributes.childFontWeight,
-          lineHeight: depth === 0 ? attributes.lineHeight : attributes.childLineHeight
+          fontSize: depth === 0 ? fontSize : childFontSize,
+          fontWeight: depth === 0 ? fontWeight : childFontWeight,
+          lineHeight: depth === 0 ? lineHeight : childLineHeight
         },
+        "aria-expanded": item.children && item.children.length > 0 && depth < maxDepth ? "false" : undefined,
         children: [item.title, item.children && item.children.length > 0 && depth < maxDepth ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("span", {
-          className: `menu-expand-icon dashicons dashicons-${attributes.expandIcon}`,
+          className: `menu-expand-icon dashicons dashicons-${expandIcon}`,
           style: {
-            fontSize: attributes.collapseFontSize,
-            fontWeight: attributes.collapseFontWeight,
-            lineHeight: attributes.collapseLineHeight
+            fontSize: collapseFontSize,
+            fontWeight: collapseFontWeight,
+            lineHeight: collapseLineHeight
           }
         }) : null]
-      }), item.children && item.children.length > 0 && depth < maxDepth && renderMenuItems(item.children, depth + 1)]
+      }), item.children && item.children.length > 0 && depth < maxDepth && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("ul", {
+        role: "group",
+        "aria-hidden": "true",
+        children: renderMenuItems(item.children, depth + 1)
+      })]
     }, item.id))
   });
-  return items ? renderMenuItems(items, currentDepth) : null;
+  return items && Array.isArray(items) ? renderMenuItems(items, currentDepth) : null;
 };
 
 /***/ }),
@@ -671,7 +710,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_AccordionSettings__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/AccordionSettings */ "./src/components/AccordionSettings.js");
 /* harmony import */ var _components_TypographySettings__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/TypographySettings */ "./src/components/TypographySettings.js");
 /* harmony import */ var _components_CollapseIconSettings__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/CollapseIconSettings */ "./src/components/CollapseIconSettings.js");
-/* harmony import */ var _components_ProOnlyText__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/ProOnlyText */ "./src/components/ProOnlyText.js");
+/* harmony import */ var _components_ProUpgradeNotice__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/ProUpgradeNotice */ "./src/components/ProUpgradeNotice.js");
 /* harmony import */ var _components_DynamicStyles__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/DynamicStyles */ "./src/components/DynamicStyles.js");
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./editor.scss */ "./src/editor.scss");
 /* harmony import */ var _block_json__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./block.json */ "./src/block.json");
@@ -757,37 +796,23 @@ function Edit(props) {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_CollapseIconSettings__WEBPACK_IMPORTED_MODULE_9__.CollapseIconSettings, {
           props: props
         })
-      }), !props.attributes.hasProVersion && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.Fragment, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-          className: "wpbean-pro-only-panel",
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Color", "vertical-sidebar-menu-block"),
-          initialOpen: false,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_ProOnlyText__WEBPACK_IMPORTED_MODULE_10__.ProOnlyText, {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-          className: "wpbean-pro-only-panel",
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Background", "vertical-sidebar-menu-block"),
-          initialOpen: false,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_ProOnlyText__WEBPACK_IMPORTED_MODULE_10__.ProOnlyText, {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-          className: "wpbean-pro-only-panel",
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Spacing", "vertical-sidebar-menu-block"),
-          initialOpen: false,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_ProOnlyText__WEBPACK_IMPORTED_MODULE_10__.ProOnlyText, {})
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
-          className: "wpbean-pro-only-panel",
-          title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Others", "vertical-sidebar-menu-block"),
-          initialOpen: false,
-          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_ProOnlyText__WEBPACK_IMPORTED_MODULE_10__.ProOnlyText, {})
-        })]
+      }), !props.attributes.hasProVersion && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.Fragment, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_ProUpgradeNotice__WEBPACK_IMPORTED_MODULE_10__.ProUpgradeNotice, {})
       })]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsxs)("div", {
       ...blockProps,
       children: [!!props.attributes.menuId && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.Fragment, {
-        children: Array.isArray(menuItems) && menuItems.length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_RenderMenuItems__WEBPACK_IMPORTED_MODULE_5__.RenderMenuItems, {
-          items: menuItems,
-          maxDepth: props.attributes.menuDepth == '0' ? 10 : props.attributes.menuDepth - 1,
-          attributes: props.attributes
-        }, props.clientId) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("p", {
+        children: Array.isArray(menuItems) && menuItems.length > 0 ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("nav", {
+          "aria-label": (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Vertical Sidebar Menu", "vertical-sidebar-menu-block"),
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("ul", {
+            role: "menu",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)(_components_RenderMenuItems__WEBPACK_IMPORTED_MODULE_5__.RenderMenuItems, {
+              items: menuItems,
+              maxDepth: props.attributes.menuDepth == '0' ? 10 : props.attributes.menuDepth - 1,
+              attributes: props.attributes
+            }, props.clientId)
+          })
+        }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_14__.jsx)("p", {
           style: {
             color: 'red',
             fontWeight: 'bold'

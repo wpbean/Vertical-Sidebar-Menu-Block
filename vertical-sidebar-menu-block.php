@@ -5,7 +5,7 @@
  * Description:       Collapsible sidebar vertical sidebar menu block for the Gutenberg editor.
  * Requires at least: 6.6
  * Requires PHP:      7.4
- * Version:           1.02
+ * Version:           1.03
  * Author:            WPBean
  * Author URI:        https://wpbean.com/
  * License:           GPL-2.0-or-later
@@ -60,7 +60,7 @@ final class WPBeanVerticalSidebarMenuBlock {
      * Define plugin constants.
      */
     private function define_constants() {
-        define( 'VSMB_VERSION', '1.0' );
+        define( 'VSMB_VERSION', '1.03' );
         define( 'VSMB_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
         define( 'VSMB_PLUGIN_URL', plugin_dir_url( __FILE__ ) );
     }
