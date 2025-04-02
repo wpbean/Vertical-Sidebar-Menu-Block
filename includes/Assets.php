@@ -17,6 +17,7 @@ class Assets {
 	public function __construct() {
 		add_action( 'enqueue_block_editor_assets', array( $this, 'register_scripts' ) );
 		add_action( 'wp_enqueue_scripts', array( $this, 'register_scripts' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'force_enqueue_scripts' ) );
 		add_action( 'wp_footer', array( $this, 'enqueue_dynamic_style' ) );
 		add_action( 'wp_nav_menu', array( $this, 'enqueue_quadlayers_icons_scripts' ), 10, 2 );
 	}
@@ -32,6 +33,23 @@ class Assets {
 			'1.2',
 			true
 		);
+
+		wp_register_script(
+			'wpb-vertical-sidebar-menu-block-view',
+			plugins_url( '../build/view.js', __FILE__ ),
+			array( 'jquery', 'wpb-vertical-sidebar-menu-block-wpbeannavgoco' ),
+			'1.2',
+			true
+		);
+	}
+	/**
+	 * Force Enqueue scripts for the block. Required if using caching plugins.
+	 */
+	public function force_enqueue_scripts() {
+		if ( ! is_admin() ) {
+			wp_enqueue_script( 'wpb-vertical-sidebar-menu-block-wpbeannavgoco' );
+			wp_enqueue_script( 'wpb-vertical-sidebar-menu-block-view' );
+		}
 	}
 
 	/**

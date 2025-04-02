@@ -5,15 +5,15 @@ export const RenderMenuItems = ({
     attributes,
 }) => {
     const {
-        fontSize = "16px",
+        fontSize = "14px",
         fontWeight = "400",
         lineHeight = "1.5",
         childFontSize = "14px",
         childFontWeight = "400",
         childLineHeight = "1.5",
-        collapseFontSize = "12px",
+        collapseFontSize = "17px",
         collapseFontWeight = "400",
-        collapseLineHeight = "1.5",
+        collapseLineHeight = "1",
         expandIcon = "arrow-down",
         accordionMode = false,
     } = attributes || {};

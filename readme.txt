@@ -1,9 +1,9 @@
 === Vertical Sidebar Menu Block ===
 Contributors:      wpbean, imranwpb
-Tags:              block, sidebar menu, vertical menu, accordion menu, collapse menu
+Tags:              block, sidebar menu, vertical menu, accordion menu, menu
 Requires at least: 6.6
 Tested up to:      6.7.1
-Stable tag:        1.03
+Stable tag:        1.05
 Requires PHP:      7.4
 License:           GPL-2.0-or-later
 License URI:       https://www.gnu.org/licenses/gpl-2.0.html
@@ -18,10 +18,12 @@ Collapsible sidebar menus are an excellent way to improve your site's user exper
 
 == Quick Links ==
 
-👉 Upgrade to Pro: [Explore all Features of Vertical Sidebar Menu Block](https://wpbean.com/downloads/vertical-sidebar-menu-block-pro/)  
+👉 Upgrade to Pro: [Explore all Features of Vertical Sidebar Menu Block](https://wpbean.com/downloads/vertical-sidebar-menu-block-pro/?utm_content=Vertical+Sidebar+Menu+Block&utm_campaign=repository&utm_medium=desc-link&utm_source=WordPress)  
 👉 Live Demo: [Try Vertical Sidebar Menu Block Demo](https://blocks.wpbean.com/vertical-sidebar-menu-block/)  
 👉 Support: [Support](https://wpbean.com/support/)  
 👉 Source Code: [GitHub Repository](https://github.com/wpbean/Vertical-Sidebar-Menu-Block)
+
+https://youtu.be/oULtCW99xqs
 
 == Key Features ==
 
@@ -112,5 +114,11 @@ This plugin includes a modified version of the <a href="https://github.com/tefra
 
 = 1.03 =
 * Addressed WordPress.org plugin 3nd review feedback.
+
+= 1.04 =
+* Some style issue fixed.
+
+= 1.05 =
+* WP Rocket issue fixed.
 
 == Upgrade Notice ==

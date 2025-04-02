@@ -200,7 +200,8 @@ function getDynamicStyles(attributes) {
     childSpacing,
     // Child spacing object
     childBorderColor,
-    childBorderWidth
+    childBorderWidth,
+    borderRadius
   } = attributes;
 
   // Initialize dynamic styles object
@@ -220,7 +221,8 @@ function getDynamicStyles(attributes) {
     '--wpbean-vsm-current-hover-background': currentHoverBackground || '',
     '--wpbean-vsm-item-spacing': itemSpacing || '',
     '--wpbean-vsm-child-border-color': childBorderColor || '',
-    '--wpbean-vsm-child-border-width': childBorderWidth || ''
+    '--wpbean-vsm-child-border-width': childBorderWidth || '',
+    '--wpbean-vsm-border-radius': borderRadius || ''
   };
 
   // Handle parentSpacing object
@@ -369,12 +371,12 @@ const ProUpgradeNotice = () => {
       children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Unlock premium features such as custom colors, background, advanced spacing, and dedicated support.", "vertical-sidebar-menu-block")
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.__experimentalText, {
       children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("a", {
-        href: "https://wpbean.com/downloads/vertical-sidebar-menu-block-pro/",
+        href: "https://wpbean.com/downloads/vertical-sidebar-menu-block-pro/?utm_content=Vertical+Sidebar+Menu+Block&utm_campaign=blocklink&utm_medium=block-control&utm_source=FreeVersion",
         target: "_blank",
         rel: "noopener noreferrer",
         style: {
-          color: '#0073aa',
-          textDecoration: 'none'
+          color: "#0073aa",
+          textDecoration: "none"
         },
         children: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Learn More", "vertical-sidebar-menu-block")
       })
@@ -404,15 +406,15 @@ const RenderMenuItems = ({
   attributes
 }) => {
   const {
-    fontSize = "16px",
+    fontSize = "14px",
     fontWeight = "400",
     lineHeight = "1.5",
     childFontSize = "14px",
     childFontWeight = "400",
     childLineHeight = "1.5",
-    collapseFontSize = "12px",
+    collapseFontSize = "17px",
     collapseFontWeight = "400",
-    collapseLineHeight = "1.5",
+    collapseLineHeight = "1",
     expandIcon = "arrow-down",
     accordionMode = false
   } = attributes || {};
@@ -1096,7 +1098,7 @@ module.exports = window["wp"]["i18n"];
   \************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"wpbean/vertical-sidebar-menu-block","version":"0.1.0","title":"Vertical Menu","category":"widgets","icon":"","description":"Collapsible sidebar vertical sidebar menu block.","keywords":["menu","vertical","sidebar","navigation","collapsible","accordion"],"example":{},"supports":{"html":false},"attributes":{"theClientId":{"type":"string","default":""},"hasProVersion":{"type":"boolean","default":false},"menuId":{"type":"string","default":""},"menuDepth":{"type":"number","default":0},"accordionMode":{"type":"boolean","default":false},"preserveExpanded":{"type":"boolean","default":false},"currentExpanded":{"type":"boolean","default":true},"expandIcon":{"type":"string","default":"plus"},"fontSize":{"type":"string","default":"14px"},"fontWeight":{"type":"string","default":"500"},"lineHeight":{"type":"number"},"childFontSize":{"type":"string","default":"14px"},"childFontWeight":{"type":"string","default":"500"},"childLineHeight":{"type":"number"},"collapseFontSize":{"type":"string","default":"17px"},"collapseFontWeight":{"type":"string"},"collapseLineHeight":{"type":"number"},"parentColor":{"type":"string","default":"#1f2937"},"parentHoverColor":{"type":"string","default":"#1f2937"},"childColor":{"type":"string","default":"#1F293A"},"childHoverColor":{"type":"string","default":"#1F293A"},"currentColor":{"type":"string","default":"#D7DDE4"},"currentHoverColor":{"type":"string","default":"#D7DDE4"},"parentBackground":{"type":"string"},"parentHoverBackground":{"type":"string","default":"rgba(31, 41, 55, 0.1)"},"childBackground":{"type":"string"},"childHoverBackground":{"type":"string","default":"rgba(31, 41, 55, 0.1)"},"currentBackground":{"type":"string","default":"#2C3440"},"currentHoverBackground":{"type":"string","default":"#2C3440"},"parentSpacing":{"type":"object","default":{"top":"0.5rem","right":"1rem","bottom":"0.5rem","left":"1rem"}},"childSpacing":{"type":"object","default":{"top":"0.5rem","right":"1rem","bottom":"0.5rem","left":"1rem"}},"itemSpacing":{"type":"number"},"childBorder":{"type":"boolean","default":true},"childBorderColor":{"type":"string","default":"rgb(31 41 55 / 10%)"},"childBorderWidth":{"type":"number","default":1}},"textdomain":"vertical-sidebar-menu-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":["dashicons","file:./style-index.css"],"viewScript":["jquery","wpb-vertical-sidebar-menu-block-wpbeannavgoco","file:./view.js"],"render":"file:./render.php"}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"wpbean/vertical-sidebar-menu-block","version":"0.1.0","title":"Vertical Menu","category":"widgets","icon":"","description":"Collapsible sidebar vertical sidebar menu block.","keywords":["menu","vertical","sidebar","navigation","collapsible","accordion"],"example":{},"supports":{"html":false},"attributes":{"theClientId":{"type":"string","default":""},"hasProVersion":{"type":"boolean","default":false},"menuId":{"type":"string","default":""},"menuDepth":{"type":"number","default":0},"accordionMode":{"type":"boolean","default":false},"preserveExpanded":{"type":"boolean","default":false},"currentExpanded":{"type":"boolean","default":true},"expandIcon":{"type":"string","default":"plus"},"fontSize":{"type":"string","default":"14px"},"fontWeight":{"type":"string","default":"500"},"lineHeight":{"type":"number","default":1.5},"childFontSize":{"type":"string","default":"14px"},"childFontWeight":{"type":"string","default":"500"},"childLineHeight":{"type":"number"},"collapseFontSize":{"type":"string","default":"17px"},"collapseFontWeight":{"type":"string"},"collapseLineHeight":{"type":"number"},"parentColor":{"type":"string","default":"#1f2937"},"parentHoverColor":{"type":"string","default":"#1f2937"},"childColor":{"type":"string","default":"#1F293A"},"childHoverColor":{"type":"string","default":"#1F293A"},"currentColor":{"type":"string","default":"#D7DDE4"},"currentHoverColor":{"type":"string","default":"#D7DDE4"},"parentBackground":{"type":"string"},"parentHoverBackground":{"type":"string","default":"rgba(31, 41, 55, 0.1)"},"childBackground":{"type":"string"},"childHoverBackground":{"type":"string","default":"rgba(31, 41, 55, 0.1)"},"currentBackground":{"type":"string","default":"#2C3440"},"currentHoverBackground":{"type":"string","default":"#2C3440"},"parentSpacing":{"type":"object","default":{"top":"0.5rem","right":"1rem","bottom":"0.5rem","left":"1rem"}},"childSpacing":{"type":"object","default":{"top":"0.5rem","right":"1rem","bottom":"0.5rem","left":"1rem"}},"itemSpacing":{"type":"number"},"childBorder":{"type":"boolean","default":true},"childBorderColor":{"type":"string","default":"rgb(31 41 55 / 10%)"},"childBorderWidth":{"type":"number","default":1},"borderRadius":{"type":"number","default":6}},"textdomain":"vertical-sidebar-menu-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":["dashicons","file:./style-index.css"],"viewScript":["jquery","wpb-vertical-sidebar-menu-block-wpbeannavgoco","file:./view.js"],"render":"file:./render.php"}');
 
 /***/ })
 

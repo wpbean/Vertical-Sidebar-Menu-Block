@@ -54,7 +54,8 @@
             "default": "500"
         },
         "lineHeight": {
-            "type": "number"
+            "type": "number",
+			"default": 1.5
         },
 		"childFontSize": {
 			"type": "string",
@@ -155,6 +156,10 @@
 		"childBorderWidth": {
 			"type": "number",
 			"default": 1
+		},
+		"borderRadius": {
+			"type": "number",
+			"default": 6
 		}
 	},
 	"textdomain": "vertical-sidebar-menu-block",

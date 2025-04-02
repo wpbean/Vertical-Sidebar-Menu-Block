@@ -16,7 +16,8 @@ export function getDynamicStyles(attributes) {
         parentSpacing, // Parent spacing object
         childSpacing, // Child spacing object
         childBorderColor,
-        childBorderWidth
+        childBorderWidth,
+        borderRadius
     } = attributes;
 
     // Initialize dynamic styles object
@@ -36,7 +37,8 @@ export function getDynamicStyles(attributes) {
         '--wpbean-vsm-current-hover-background': currentHoverBackground || '',
         '--wpbean-vsm-item-spacing': itemSpacing || '',
         '--wpbean-vsm-child-border-color': childBorderColor || '',
-        '--wpbean-vsm-child-border-width': childBorderWidth || ''
+        '--wpbean-vsm-child-border-width': childBorderWidth || '',
+        '--wpbean-vsm-border-radius': borderRadius || '',
     };
 
     // Handle parentSpacing object

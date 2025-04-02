@@ -58,7 +58,7 @@
   padding-bottom: var(--wpbean-vsm-child-spacing-bottom, 0.5rem);
   padding-right: var(--wpbean-vsm-child-spacing-left, 1rem);
 }
-.wp-block-wpbean-vertical-sidebar-menu-block > nav > ul ul li > a:hover {
+.wp-block-wpbean-vertical-sidebar-menu-block > nav > ul ul li > a:hover, .wp-block-wpbean-vertical-sidebar-menu-block > nav > ul ul li > a:focus {
   color: var(--wpbean-vsm-child-hover-color, #1f2937) !important;
   background: var(--wpbean-vsm-child-hover-background, rgba(31, 41, 55, 0.1)) !important;
 }
@@ -85,7 +85,7 @@
   -ms-transition: all 0.3s linear;
   outline: 0;
   line-height: 24px;
-  border-radius: 0.5rem;
+  border-radius: calc(var(--wpbean-vsm-border-radius, 6) * 1px);
   text-wrap: balance;
   color: #1f2937 !important;
 }
@@ -110,9 +110,6 @@
   -webkit-transition: transform 0.3s linear;
   -ms-transition: transform 0.3s linear;
 }
-.wp-block-wpbean-vertical-sidebar-menu-block > nav > ul li.menu-item-has-children.wpb-submenu-opened > a {
-  color: #1f2937 !important;
-}
 .wp-block-wpbean-vertical-sidebar-menu-block > nav > ul li.menu-item-has-children.wpb-submenu-opened > a .menu-expand-icon::before {
   transform: rotate(-45deg);
 }
@@ -123,7 +120,7 @@
   color: var(--wpbean-vsm-current-color, #D7DDE4) !important;
   background-color: var(--wpbean-vsm-current-background, #2C3440) !important;
 }
-.wp-block-wpbean-vertical-sidebar-menu-block > nav > ul li.current-menu-item > a:hover, .wp-block-wpbean-vertical-sidebar-menu-block > nav > ul li.wpb-submenu-opened.current-menu-item > a:hover {
+.wp-block-wpbean-vertical-sidebar-menu-block > nav > ul li.current-menu-item > a:hover, .wp-block-wpbean-vertical-sidebar-menu-block > nav > ul li.current-menu-item > a:focus, .wp-block-wpbean-vertical-sidebar-menu-block > nav > ul li.wpb-submenu-opened.current-menu-item > a:hover, .wp-block-wpbean-vertical-sidebar-menu-block > nav > ul li.wpb-submenu-opened.current-menu-item > a:focus {
   color: var(--wpbean-vsm-current-hover-color) !important;
   background-color: var(--wpbean-vsm-current-hover-background) !important;
 }
@@ -136,10 +133,14 @@
 .wp-block-wpbean-vertical-sidebar-menu-block > nav > ul > li:first-child {
   margin-top: 0;
 }
+.wp-block-wpbean-vertical-sidebar-menu-block > nav > ul > li.wpb-submenu-opened > a {
+  color: var(--wpbean-vsm-parent-hover-color, #1f2937) !important;
+  background: var(--wpbean-vsm-parent-hover-background, rgba(31, 41, 55, 0.1)) !important;
+}
 .wp-block-wpbean-vertical-sidebar-menu-block > nav > ul > li > a {
   font-size: var(--wpbean-vsm-font-size, 14px);
   font-weight: var(--wpbean-vsm-font-weight, 500);
-  line-height: var(--wpbean-vsm-line-height, 1);
+  line-height: var(--wpbean-vsm-line-height, 1.5);
   color: var(--wpbean-vsm-parent-color, #1f2937) !important;
   background: var(--wpbean-vsm-parent-background);
   padding-top: var(--wpbean-vsm-parent-spacing-top, 0.5rem);
@@ -147,7 +148,11 @@
   padding-bottom: var(--wpbean-vsm-parent-spacing-bottom, 0.5rem);
   padding-right: var(--wpbean-vsm-parent-spacing-left, 1rem);
 }
-.wp-block-wpbean-vertical-sidebar-menu-block > nav > ul > li > a:hover {
+.wp-block-wpbean-vertical-sidebar-menu-block > nav > ul > li > a:hover, .wp-block-wpbean-vertical-sidebar-menu-block > nav > ul > li > a:focus {
   color: var(--wpbean-vsm-parent-hover-color, #1f2937) !important;
   background: var(--wpbean-vsm-parent-hover-background, rgba(31, 41, 55, 0.1)) !important;
+}
+.wp-block-wpbean-vertical-sidebar-menu-block > nav > ul > li > ul li.wpb-submenu-opened > a {
+  color: var(--wpbean-vsm-child-hover-color, #1f2937) !important;
+  background: var(--wpbean-vsm-child-hover-background, rgba(31, 41, 55, 0.1)) !important;
 }
